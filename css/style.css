@@ -579,7 +579,6 @@ button:hover {
        }
        .course_type_information{
         padding: 0 0 0;
-        max-width: 200px;
        }
        .course_choices_img:nth-child(2){
         grid-area: 2/1/3/2;
