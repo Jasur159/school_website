@@ -635,4 +635,7 @@ button:hover {
   .course_choices_img:nth-child(4) {
     grid-area: 7/1/8/2;
   }
+  .info_right_content h1:before{
+   display: none;
+  }
 }
