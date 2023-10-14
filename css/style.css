@@ -501,7 +501,7 @@ button:hover {
   right: 15px;
   top: 16px;
 }
-/* @media (max-width:1030px){
+@media (max-width:1030px){
    .supplyment_text{
   text-align: center;
   display: flex;
@@ -586,4 +586,4 @@ button:hover {
        .info_pupil_img2{
         display: none;
        }
-} */
+}
