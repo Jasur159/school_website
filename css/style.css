@@ -582,6 +582,10 @@ button:hover {
 .networking_text {
   max-width: 100%;
 }
+.networking_card:hover{
+  transform: scale(1.1);
+  box-shadow: none;
+}
 .networking_text h4 {
   color: #96bb7c;
   font-size: 14px;
