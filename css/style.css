@@ -34,6 +34,33 @@ nav {
   justify-content: space-between;
   padding: 34px;
   align-items: center;
+  position: fixed;
+ top: 0;
+ width: 100%;
+}
+nav::before{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  content: "";
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0,0,0, 0.1);
+  backdrop-filter: blur(50px);
+}
+nav::after{
+  top: 0;
+  width: 100%;
+  content: " ";
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+  transition: 0.5s;
+}
+nav:hover::after{
+  left: 100%;
 }
 .left_nav {
   display: flex;
@@ -792,9 +819,77 @@ color: darkkhaki;
   line-height: 24px;
   letter-spacing: 0.2px;
 }
+#check{
+  display: none;
+}
+.icons{
+  right: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+  display: none;
+  right: 5%;
+  position: absolute;
+}
 
 
 
+
+
+@media (max-width: 825px) {
+  .right_nav{
+    display: none;
+  }
+  .navlist {
+    display: none;
+  }
+  .experts_boxes{
+  grid-template-columns: repeat(1,1fr);
+  row-gap: 70px;
+  }
+  .icons {
+    display: inline-flex;
+  }
+  .icons #close_bar{
+    display: none;
+  }
+  #check:checked~ .icons #menu_bar{
+    display: none;
+  }
+  #check:checked~ .icons #close_bar{
+    display: block;
+  }
+  .navlist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: .3s ease;
+    overflow: hidden;
+}
+#check:checked~ .navlist{
+      height: 12rem;
+  }
+  .navlist .link {
+    font-size: 1.1rem;
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  #check:checked~ .navlist .link{
+      transform: translateY(0 );
+      transition-delay: calc(  .15s * var(--i));
+      opacity: 1;
+    }
+}
 
 
 @media (max-width: 1030px) {
@@ -877,15 +972,6 @@ color: darkkhaki;
     align-items: center;
   }
 }
-@media (max-width: 825px) {
-  .navlist {
-    display: none;
-  }
-  .experts_boxes{
-  grid-template-columns: repeat(1,1fr);
-  row-gap: 70px;
-  }
-}
 @media (max-width: 600px){
   .networking_boxes{
     grid-template-columns: repeat(1,1fr);
@@ -950,6 +1036,108 @@ color: darkkhaki;
   }
   .right_nav button:last-child {
     padding: 10px 15px;
+  }
+  .header_content{
+    padding: 0 5%;
+  }
+  .header_content p:nth-child(1){
+    font-size: 0.6rem;
+    margin-top: 1.2rem;
+  }
+  .header_content h1 + p{
+    font-size: 0.9rem;
+  }
+  .header_content h1{
+    font-size: 2rem;
+    margin: 5px 0;
+    line-height: 45px;
+  }
+  .header_content{
+    gap: 20px;
+  }
+  .supplyment_text{
+    padding: 0 5%;
+  }
+  .supplyment_text h4{
+    font-size: 0.6rem;
+  }
+  .supplyment_text h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .supplyment_text p{
+    font-size: 0.9rem;
+  }
+  .info_right_content{
+    padding: 0 5%;
+    max-width: fit-content;
+  }
+  .info_right_content h4{
+    font-size: 0.6rem;
+  }
+  .info_right_content h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .info_right_content p{
+    font-size: 0.9rem;
+  }
+  .course_type_text{
+    padding: 0 5%;
+  }
+  .course_type_text h4{
+    font-size: 0.6rem;
+  }
+  .course_type_text h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .course_type_text p{
+    font-size: 0.9rem;
+    margin-bottom: 90px;
+    max-width: 100%;
+  }
+  .experts_text{
+    padding: 0 5%;
+  }
+  .experts_text h4{
+    font-size: 0.6rem;
+  }
+  .experts_text h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .experts_text p{
+    font-size: 0.9rem;
+  }
+  .networking_text{
+    padding: 0 5%;
+  }
+  .networking_text h4{
+    font-size: 0.6rem;
+  }
+  .networking_text h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .networking_text p{
+    font-size: 0.9rem;
+  }
+  .news_text{
+    padding: 0 5%;
+  }
+  .news_text h4{
+    font-size: 0.6rem;
+  }
+  .news_text h1{
+    font-size: 2rem;
+    line-height: 45px;
+  }
+  .news_text p{
+  font-size: 0.9rem;
+  }
+  .left_nav a{
+    font-size: 1rem;
   }
 }
 @media (max-width: 710px){
